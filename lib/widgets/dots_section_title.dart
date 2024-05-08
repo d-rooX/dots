@@ -17,7 +17,8 @@ class DotsSectionTitle extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontWeight: FontWeight.bold,
+              fontFamily: 'Reddit Sans',
+              fontWeight: FontWeight.w200,
               fontSize: 28,
             ),
           ),

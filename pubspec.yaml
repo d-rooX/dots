@@ -10,6 +10,7 @@ dependencies:
   pubspec_dependency_sorter: ^1.0.4
   flutter: 
     sdk: flutter
+  time_machine: ^0.9.17
 dev_dependencies: 
   flutter_lints: ^3.0.0
   solid_lints: ^0.1.5
@@ -17,3 +18,7 @@ dev_dependencies:
     sdk: flutter
 flutter: 
   uses-material-design: true
+  fonts:
+    - family: Reddit Sans
+      fonts:
+        - asset: font/RedditSans-Light.ttf

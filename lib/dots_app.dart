@@ -9,6 +9,8 @@ class DotsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      darkTheme:
+          ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
       debugShowCheckedModeBanner: false,
       home: ChangeNotifierProvider(
         create: (_) => TimeNotifier(),

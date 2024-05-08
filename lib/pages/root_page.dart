@@ -3,9 +3,10 @@ import 'package:dots/widgets/dots_grid.dart';
 import 'package:dots/widgets/dots_section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:time_machine/time_machine.dart';
 
 class RootPage extends StatelessWidget {
-  static const _yearOfBirth = 2003;
+  static final _dateOfBirth = DateTime(2003, DateTime.may, 8);
 
   const RootPage({super.key});
 
@@ -23,13 +24,12 @@ class RootPage extends StatelessWidget {
               dotsCount: 100,
               dotsInRowCount: 10,
               isFilledCallback: (index) {
-                final rangeStart = timer.now.subtract(
-                  Duration(
-                    days: 365 * (timer.now.year - _yearOfBirth),
-                  ),
-                );
+                final yearsFromBirth = Period.differenceBetweenDates(
+                  LocalDate.dateTime(_dateOfBirth),
+                  LocalDate.today(),
+                ).years;
 
-                return index < (timer.now.year - rangeStart.year);
+                return index < yearsFromBirth;
               },
             ),
             const DotsSectionTitle(title: 'Days in year'),
